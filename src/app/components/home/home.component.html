@@ -1,0 +1,6 @@
+<div class="mainBody container-fluid d-flex justify-content-center align-items-center">
+    <button (click)="changeCount('dec')" class="btn btn-primary mx-2">-</button>
+    <h1><app-count [childCount]="parentCount"></app-count></h1>
+    <button (click)="changeCount('inc')" class="btn btn-primary mx-2">+</button>
+    <button class="btn btn-danger" (click)="saveCount()">Save</button>
+</div>
