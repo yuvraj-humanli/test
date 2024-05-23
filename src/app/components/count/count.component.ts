@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./count.component.css']
 })
 export class CountComponent {
-  @Input() childCount = "";
+  @Input() childCount = 0;
 }
