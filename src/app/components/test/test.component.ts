@@ -8,7 +8,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class TestComponent implements OnInit {
 
   parentCount: number = 10;
-  steps:number = 1;
+  steps:any;
+  numbers: number[] = []
+  type: string = "password"
+
   @Output() stepEmitter = new EventEmitter<string>();
   @Output() countEmitter = new EventEmitter<number>();
   changeValue(num : number) {
@@ -35,5 +38,17 @@ export class TestComponent implements OnInit {
   }
   emitCount(value:number){
     this.countEmitter.emit(value);
+  }
+
+  print(){
+    this.numbers = []
+    for (let index = 0; index < this.parentCount; index+=this.steps) {
+      this.numbers.push(index)
+    }
+  }
+
+  changeCheck(event:boolean){
+    this.type = event?"text":"password";
+    
   }
 }

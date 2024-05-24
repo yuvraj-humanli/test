@@ -3,8 +3,22 @@
     <h1><app-count [childCount]="parentCount"></app-count></h1>
     <button class="mx-3" (click)="changeValue(1)">Increase</button>
     <button (click)="saveToStorage()">Save</button>
+    <button (click)="print()">Print</button>
 </div>
 
 <div class="d-flex flex-row h-100 w-100 justify-content-center align-items-center">
     <app-step (stepEmitter)="changeStep($event)" [stepsEmitter]="steps"></app-step>
 </div>
+
+<div>
+    <div *ngFor="let i of numbers; index as indx">
+        <h1 *ngIf="i % 2 === 0; else oddTemplate" class="text-danger">This is an Even Element - {{i}}</h1>
+        <ng-template #oddTemplate>
+            <h1>This element will not be shown because it is ODD</h1>
+        </ng-template>
+    </div>
+</div>
+
+
+<input type="{{type}}">
+<input #checkbox type="checkbox" (change)="changeCheck(checkbox.checked)">
