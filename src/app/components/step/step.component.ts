@@ -1,5 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { count } from 'rxjs';
+import { Component, Output, EventEmitter, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-step',
@@ -9,15 +8,14 @@ import { count } from 'rxjs';
 export class StepComponent implements OnInit {
 
   @Output() stepEmitter = new EventEmitter<number>();
-  val = "5";
-
+  @Input() stepsEmitter = "0";
   ngOnInit(): void {
-    this.emitNewStep(this.val);
+    this.emitNewStep(this.stepsEmitter);
   }
 
   emitNewStep(counterElem: string) {
     
-    this.stepEmitter.emit(parseInt(counterElem))
-  }
+    this.stepEmitter.emit(parseInt(counterElem));
+  }  
 
 }
