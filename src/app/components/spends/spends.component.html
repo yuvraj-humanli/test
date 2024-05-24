@@ -1,0 +1,17 @@
+<div class="">
+    <input #date type="date">
+<button (click)="fetchData(date.value)">Go</button>
+</div>
+
+<div *ngIf="clicked === true">
+    <h1 class="text-success" *ngIf="totalSpends < 500 && date.value; else overSpend">Wohoo! Savings Day</h1>
+    <ng-template #overSpend>
+        <h1 class="text-danger">Uhh!! you spend too much</h1>
+    </ng-template>
+    
+    <p>Total spends {{totalSpends}} on {{date.value}}</p>
+    <ul *ngFor="let i of spends">
+        <li>{{i}}</li>
+    </ul>
+</div>
+

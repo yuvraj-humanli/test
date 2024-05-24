@@ -10,6 +10,7 @@ import { TestComponent } from './components/test/test.component';
 import { StepComponent } from './components/step/step.component';
 import { QuotesComponent } from './components/quotes/quotes.component';
 import { DataService } from './services/data.service';
+import { SpendsComponent } from './components/spends/spends.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataService } from './services/data.service';
     CountComponent,
     TestComponent,
     StepComponent,
-    QuotesComponent
+    QuotesComponent,
+    SpendsComponent
   ],
   imports: [
     BrowserModule,
